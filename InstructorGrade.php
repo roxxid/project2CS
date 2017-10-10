@@ -102,7 +102,7 @@
                 </div>
                 <hr>
             </div>
-            <?php $id++; echo $id ?>
+            <?php $id++; ?>
             <?php endwhile; ?>    
         </div>
     </div>
@@ -117,7 +117,7 @@
     function gradeSubmit(assId,studId,subId){
         //alert(assId+","+studId+","+subId);
         var grade = $("#grade"+assId).val();
-        var url = "http://192.168.64.2/projectClass/InstructorGradeProcess.php?assignmentId="+assId+"&studentId="+studId+"&submissionId="+subId+"&grade="+grade;
+        var url = "InstructorGradeProcess.php?assignmentId="+assId+"&studentId="+studId+"&submissionId="+subId+"&grade="+grade;
         $.get(url, function(data){
             alert(data);
         });

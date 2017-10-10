@@ -81,7 +81,8 @@ echo '<div class="jumbotron">';
         }*/
         echo "Grade:".$grade;
         echo '</div>';
-        
+        echo '<p><a class="btn btn-primary btn-lg" href="student.php" role="button">Go back to assignment list</a></p>';
+        return;
 
 mysqli_close($link);
 ?>

@@ -59,14 +59,6 @@ CREATE TABLE `grades` (
   `subId` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `grades`
---
-
-INSERT INTO `grades` (`studId`, `assId`, `grade`, `subId`) VALUES
-('U012345678', 1, 9, 1),
-('U012345678', 2, 8, 2);
-
 -- --------------------------------------------------------
 
 --

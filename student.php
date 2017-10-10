@@ -34,6 +34,9 @@
         </div>
     </div>
 
+    <div class="col-xs-6 text-right">
+            <p><a class="btn btn-primary btn-lg float-right" href="index.php" role="button">Back</a></p>
+        </div>
 </body>
 
 </html>

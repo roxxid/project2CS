@@ -59,6 +59,8 @@
     </div>
 
     <button type="submit" class="btn btn-default">Submit</button>
+    <p>   </p>
+    <p><a class="btn btn-primary btn-sm" href="student.php" role="button">Go back to assignment list</a></p>
 
     <?php if(isset($error)): ?>
           <div class="label label-danger"><?php echo $error; ?></div>

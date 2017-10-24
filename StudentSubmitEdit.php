@@ -1,3 +1,5 @@
+<script src="https://cdn.ckeditor.com/4.7.3/standard/ckeditor.js"></script>
+
 <?php include 'db.php'; ?>
 
 <?php
@@ -45,15 +47,19 @@
     <div class="form-group">
       <label for="studid" class="col-xs-3">Student ID</label>
       <div class="col-xs-9">
-        <input type="text" class="form-control" id="studid" name="studid" placeholder="Enter your Student Id">
+        <input type="text" pattern="U+\d{9}" class="form-control" id="studid" name="studid" placeholder="Enter your Student Id" autofocus>
+        
       </div>
 
       <label for="assid" class="col-xs-3">Assignment ID</label>
       <div class="col-xs-9">
-        <input type="text" class="form-control" id="assid" name="assid" placeholder="Enter the Assignment Id">
+        <input type="number" class="form-control" id="assid" name="assid" placeholder="Enter the Assignment Id">
       </div>
     </br></br></br>
       <label for="ass" class="col-xs-3"><h1>Assignment</h1></label>
+      <br><br>
+      <br>
+      <br>
       <textarea class="form-control" rows="10" id="ass" name="ass" placeholder="Enter your text here"></textarea>
 
     </div>
@@ -72,7 +78,9 @@
     <div class="col-xs-1"></div>
     </div>
 
-
+    <script>
+			CKEDITOR.replace('ass');
+		</script>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>

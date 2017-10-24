@@ -91,7 +91,7 @@
                     </div>
                     <div class="col-xs-1">
                         <form action="" method="post">
-                        <input type="text" class="form-control" id="<?php echo 'grade' . $row['assId'] ?>" name="grade" placeholder="Enter Grade">
+                        <input type="number" class="form-control" id="<?php echo 'grade' . $row['assId'] ?>" name="grade" placeholder="Enter Grade">
                         
                             <!-- <button type="submit" class="btn btn-default" style="margin-top: 10px;"> -->
                             <!-- Submit</button> -->

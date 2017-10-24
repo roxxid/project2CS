@@ -39,6 +39,19 @@
         </div>
     </div>
 
+  <div class="text-center">
+    <p><h3>Instructions:</h3>
+       <p>To submit your assignment, enter your UID, assignment ID and the assignment content.</p>
+       <p>Make sure what you entered is in correct pattern. UID should begin with letter “U”, followed by 9 digits.</p>
+       <p>Make sure the assignment ID is correct.</p>
+    <b><p>Example:</p></b>
+    <p>Student ID: U012345678</p>
+    <p>Assignment ID: 3</p>
+    <p>Content: Sample content for assignment 3.</p>
+    </br>
+    </p>
+   </div>
+
     <form method="POST" action="StudentCreateEditProcess.php">
 
     <div class="row">
@@ -50,7 +63,7 @@
         <input type="text" pattern="U+\d{9}" class="form-control" id="studid" name="studid" placeholder="Enter your Student Id" autofocus>
         
       </div>
-
+      </br></br>
       <label for="assid" class="col-xs-3">Assignment ID</label>
       <div class="col-xs-9">
         <input type="number" class="form-control" id="assid" name="assid" placeholder="Enter the Assignment Id">
@@ -65,6 +78,8 @@
     </div>
 
     <button type="submit" class="btn btn-default">Submit</button>
+    <p>   </p>
+    <p><a class="btn btn-primary btn-sm" href="student.php" role="button">Go back to assignment list</a></p>
 
     <?php if(isset($error)): ?>
           <div class="label label-danger"><?php echo $error; ?></div>

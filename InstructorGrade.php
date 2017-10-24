@@ -55,11 +55,15 @@
             </div>
         </div>
 
+        <div class="text-right">
+        <p><b>Instructions:</b>&nbsp;&nbsp;Grade is from 1 to 10. Enter the grade in the text area and hit “Submit”.</p>
+        </div>
+
         <div class="container-fluid">
             <div class="row bg-primary">
                 <div class="col-xs-10">
                 <span class="h3" style="float:left;">Assignments</span>
-                <span class="h3" style="float:right;">A.W.C.</span>
+                <span class="h3" style="float:right;">Average Word Count</span>
                 </div>
 
                 <div class="col-xs-2">
@@ -82,7 +86,7 @@
                         <label id="labelLastName_<?php echo $id ?>"><?php echo $row['lastName']; ?></label>
                     </div>
                     <div class="col-xs-2">
-                        <?php echo $row['subDate']; ?> - <?php echo $row['wordCount']; ?>
+                        <?php echo $row['subDate']; ?> - Word Count: <?php echo $row['wordCount']; ?>
                     </div>
                 </div>
                 <div class="row">

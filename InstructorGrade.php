@@ -2,11 +2,11 @@
 
 <?php
     // SELECT QUERY
-    $studquery = 'SELECT sub.*, stud.firstName, stud.lastName FROM submission AS sub LEFT JOIN student AS stud ON sub.studId = stud.studId';
+    $studquery = 'SELECT sub.*, stud.firstName, stud.lastName, grades.grade FROM submission AS sub NATURAL JOIN grades LEFT JOIN student AS stud ON sub.studId = stud.studId';
     $studname = mysqli_query($conn, $studquery);
-
     $avg = 'SELECT ROUND(AVG(wordCount),2) FROM submission';
     $selavg = mysqli_query($conn, $avg);
+
 ?>
 
 <!DOCTYPE html>
@@ -86,14 +86,10 @@
                         <label id="labelLastName_<?php echo $id ?>"><?php echo $row['lastName']; ?></label>
                     </div>
                     <div class="col-xs-2">
-                        <?php echo $row['subDate']; ?> - Word Count: <?php echo $row['wordCount']; ?>
+                        <?php echo $row['subDate']; ?> </br> Word Count: <?php echo $row['wordCount']; ?> </br> Grade Assigned: <?php echo $row['grade']; ?> <br> <button onClick="onGradeEdit(<?php echo $row['subId'];?>)">Edit</button>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col-xs-11 main_ctnt">
-                        <div class="show"><?php echo $row['assText']; ?> </div>
-                    </div>
-                    <div class="col-xs-1">
+
+                    <div class="col-xs-1" id="toggleEdit<?php echo $row['subId'];?>" style="display: none;">
                         <form action="" method="post">
                         <input type="number" class="form-control" id="<?php echo 'grade' . $row['assId'] ?>" name="grade" placeholder="Enter Grade">
                         
@@ -103,6 +99,14 @@
                             <a href="#" onClick="gradeSubmit('<?php echo $row['assId'];?>','<?php echo $row['studId'];?>','<?php echo $row['subId'];?>')">Submit</a>
                         </form>
                     </div>
+
+
+                </div>
+                <div class="row">
+                    <div class="col-xs-11 main_ctnt">
+                        <div class="show"><?php echo $row['assText']; ?> </div>
+                    </div>
+                    
                 </div>
                 <hr>
             </div>
@@ -126,6 +130,10 @@
             alert(data);
         });
 
+    }
+    function onGradeEdit(subId){
+        var id = "toggleEdit"+subId;
+        $('#'+id).toggle();
     }
     </script>
 

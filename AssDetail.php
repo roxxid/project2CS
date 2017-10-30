@@ -31,7 +31,7 @@ $success = mysqli_real_connect(
 
 $assId=htmlspecialchars($_GET["assId"]);
 
-$findSubSql = "SELECT * FROM submission WHERE assId=".$assId;
+$findSubSql = "SELECT * FROM submission NATURAL JOIN grades WHERE assId=".$assId;
 
 $subResult = $link->query($findSubSql);
 
@@ -43,11 +43,11 @@ if ($subResult->num_rows > 0) {
         echo "Student ID:".$row["studId"]."</br>"."Assignment ID:".$row["assId"]."</br>";
         /*$findGraSql= 'SELECT * from Grade where subID="'.$row["subID"].'"';
         $graResult = $link->query($findGraSql);*/
-        $grade = "Not Available";
+        $grade = $row["grade"];
         /*if($row2 = $graResult->fetch_assoc()) {
             $grade = $row2["Grade"];
         }*/
-        echo "Grade:".$grade;
+        echo "Grade:".$grade."/10";
         echo '</div>';
         echo '<p><a class="btn btn-primary btn-lg" href="student.php" role="button">Go back to assignment list</a></p>';
         return;

@@ -2,5 +2,6 @@
 
 Code base of the Text Team.
 
-UPDATE: The professor can grade a student's assignment. 
-        (Full implementation still pending)
+UPDATE: 1) The professor can grade a student's assignment. 
+        2) The student can view the graded.
+        3) Toggle edit grade button (functionality still pending).
